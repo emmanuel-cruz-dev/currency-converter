@@ -22,10 +22,30 @@ public class Readings {
         while(option != 7){
             System.out.println(textMenu);
             option = keyboard.nextInt();
-            if(option == 7){
-                System.out.println("Fin del programa.");
+
+            switch (option){
+                case 1:
+                    System.out.println("Opción 1 seleccionada.");
+                    break;
+                case 2:
+                    System.out.println("Opción 2 seleccionada.");
+                    break;
+                case 3:
+                    System.out.println("Opción 3 seleccionada.");
+                    break;
+                case 4:
+                    System.out.println("Opción 4 seleccionada.");
+                    break;
+                case 5:
+                    System.out.println("Opción 5 seleccionada.");
+                    break;
+                case 6:
+                    System.out.println("Opción 6 seleccionada.");
+                    break;
+                case 7:
+                    System.out.println("Opción 7 seleccionada. Fin del programa.");
+                    break;
             }
-            System.out.println("Opción seleccionada: " + option);
         }
 
     }
