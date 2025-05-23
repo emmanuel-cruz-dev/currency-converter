@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class Readings {
     public static void main(String[] args) {
+        boolean condition = true;
         String textMenu = """
                 **********************************************
                 Sea bienvenido/a al Conversor de Moneda =)
@@ -16,9 +17,17 @@ public class Readings {
                 Elija una opción válida:
                 **********************************************
                 """;
-        System.out.println(textMenu);
-        Scanner keyboard = new Scanner(System.in);
-        int optionSelected = keyboard.nextInt();
-        System.out.println("Opción seleccionada: " + optionSelected);
+
+        while(condition){
+            System.out.println(textMenu);
+            Scanner keyboard = new Scanner(System.in);
+            int optionSelected = keyboard.nextInt();
+            if(optionSelected == 7){
+                System.out.println("Fin del programa.");
+                condition = false;
+            }
+            System.out.println("Opción seleccionada: " + optionSelected);
+        }
+
     }
 }
