@@ -1,7 +1,22 @@
+import java.io.IOException;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 import java.util.Scanner;
 
 public class Readings {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, InterruptedException {
+        HttpClient client = HttpClient.newHttpClient();
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("https://v6.exchangerate-api.com/v6/771cc165b905af3683c4d984/pair"))
+                .build();
+
+        HttpResponse<String> response = client
+                .send(request, HttpResponse.BodyHandlers.ofString());
+
+        // System.out.println(response.body());
+
         int option = 0;
         Scanner keyboard = new Scanner(System.in);
         String optionText = "Ingresa el valor que desear convertir:";
