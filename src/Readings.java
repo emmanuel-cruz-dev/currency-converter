@@ -4,6 +4,7 @@ public class Readings {
     public static void main(String[] args) {
         int option = 0;
         Scanner keyboard = new Scanner(System.in);
+        String optionValue = "Ingresa el valor que desear convertir:";
         String textMenu = """
                 **********************************************
                 Sea bienvenido/a al Conversor de Moneda =)
@@ -25,7 +26,10 @@ public class Readings {
 
             switch (option){
                 case 1:
-                    System.out.println("Opción 1 seleccionada.");
+                    System.out.println(optionValue);
+                    double valueToConvert = keyboard.nextDouble();
+                    double convertedValue = valueToConvert * 2;
+                    System.out.println("El valor " + valueToConvert + " [USD] corresponde al valor final de =>>> " + convertedValue + " [ARS]");
                     break;
                 case 2:
                     System.out.println("Opción 2 seleccionada.");
@@ -43,7 +47,10 @@ public class Readings {
                     System.out.println("Opción 6 seleccionada.");
                     break;
                 case 7:
-                    System.out.println("Opción 7 seleccionada. Fin del programa.");
+                    System.out.println("Saliendo del programa.");
+                    break;
+                default:
+                    System.out.println("Opción no válida.");
                     break;
             }
         }
