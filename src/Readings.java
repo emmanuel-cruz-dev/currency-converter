@@ -18,6 +18,7 @@ public class Readings {
                 """;
         System.out.println(textMenu);
         Scanner keyboard = new Scanner(System.in);
-        String optionSelected = keyboard.nextLine();
+        int optionSelected = keyboard.nextInt();
+        System.out.println("Opción seleccionada: " + optionSelected);
     }
 }
