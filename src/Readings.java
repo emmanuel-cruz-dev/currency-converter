@@ -1,3 +1,5 @@
+import com.google.gson.Gson;
+
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -7,15 +9,20 @@ import java.util.Scanner;
 
 public class Readings {
     public static void main(String[] args) throws IOException, InterruptedException {
+        String API_BASE_URL = "https://v6.exchangerate-api.com/v6/771cc165b905af3683c4d984/pair/ARS/USD/100";
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("https://v6.exchangerate-api.com/v6/771cc165b905af3683c4d984/pair"))
+                .uri(URI.create(API_BASE_URL))
                 .build();
 
         HttpResponse<String> response = client
                 .send(request, HttpResponse.BodyHandlers.ofString());
 
-        // System.out.println(response.body());
+        String json = response.body();
+
+        Gson gson = new Gson();
+        Coins coin = gson.fromJson(json, Coins.class);
+        System.out.println(coin);
 
         int option = 0;
         Scanner keyboard = new Scanner(System.in);
