@@ -4,7 +4,9 @@ public class Readings {
     public static void main(String[] args) {
         int option = 0;
         Scanner keyboard = new Scanner(System.in);
-        String optionValue = "Ingresa el valor que desear convertir:";
+        String optionText = "Ingresa el valor que desear convertir:";
+        double convertedValue;
+        double valueToConvert;
         String textMenu = """
                 **********************************************
                 Sea bienvenido/a al Conversor de Moneda =)
@@ -26,25 +28,40 @@ public class Readings {
 
             switch (option){
                 case 1:
-                    System.out.println(optionValue);
-                    double valueToConvert = keyboard.nextDouble();
-                    double convertedValue = valueToConvert * 2;
+                    System.out.println(optionText);
+                    valueToConvert = keyboard.nextDouble();
+                    convertedValue = valueToConvert * 10;
                     System.out.println("El valor " + valueToConvert + " [USD] corresponde al valor final de =>>> " + convertedValue + " [ARS]");
                     break;
                 case 2:
-                    System.out.println("Opción 2 seleccionada.");
+                    System.out.println(optionText);
+                    valueToConvert = keyboard.nextDouble();
+                    convertedValue = valueToConvert / 10;
+                    System.out.println("El valor " + valueToConvert + " [ARS] corresponde al valor final de =>>> " + convertedValue + " [USD]");
                     break;
                 case 3:
-                    System.out.println("Opción 3 seleccionada.");
+                    System.out.println(optionText);
+                    valueToConvert = keyboard.nextDouble();
+                    convertedValue = valueToConvert * 5;
+                    System.out.println("El valor " + valueToConvert + " [USD] corresponde al valor final de =>>> " + convertedValue + " [BRL]");
                     break;
                 case 4:
-                    System.out.println("Opción 4 seleccionada.");
+                    System.out.println(optionText);
+                    valueToConvert = keyboard.nextDouble();
+                    convertedValue = valueToConvert / 5;
+                    System.out.println("El valor " + valueToConvert + " [BRL] corresponde al valor final de =>>> " + convertedValue + " [USD]");
                     break;
                 case 5:
-                    System.out.println("Opción 5 seleccionada.");
+                    System.out.println(optionText);
+                    valueToConvert = keyboard.nextDouble();
+                    convertedValue = valueToConvert * 15;
+                    System.out.println("El valor " + valueToConvert + " [USD] corresponde al valor final de =>>> " + convertedValue + " [COP]");
                     break;
                 case 6:
-                    System.out.println("Opción 6 seleccionada.");
+                    System.out.println(optionText);
+                    valueToConvert = keyboard.nextDouble();
+                    convertedValue = valueToConvert / 15;
+                    System.out.println("El valor " + valueToConvert + " [COP] corresponde al valor final de =>>> " + convertedValue + " [USD]");
                     break;
                 case 7:
                     System.out.println("Saliendo del programa.");
