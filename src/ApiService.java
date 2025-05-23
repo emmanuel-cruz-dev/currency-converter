@@ -7,18 +7,14 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 public class ApiService {
-    private String API_BASE_URL;
-    private HttpClient client;
-    private Coins coin;
+    private final Coins coin;
 
-    // Constructor que recibe los parámetros
     public ApiService(String arg1, String arg2, double amount) throws IOException, InterruptedException {
-        this.API_BASE_URL = "https://v6.exchangerate-api.com/v6/771cc165b905af3683c4d984/pair/" + arg1 + "/" + arg2 + "/" + amount;
-        this.client = HttpClient.newHttpClient();
+        String apiBaseUrl = "https://v6.exchangerate-api.com/v6/771cc165b905af3683c4d984/pair/" + arg1 + "/" + arg2 + "/" + amount;
+        HttpClient client = HttpClient.newHttpClient();
 
-        // Realizar la petición HTTP
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create(API_BASE_URL))
+                .uri(URI.create(apiBaseUrl))
                 .build();
 
         HttpResponse<String> response = client
