@@ -1,29 +1,8 @@
-import com.google.gson.Gson;
-
 import java.io.IOException;
-import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
 import java.util.Scanner;
 
 public class Readings {
-    public static void main(String[] args) throws IOException, InterruptedException {
-        String API_BASE_URL = "https://v6.exchangerate-api.com/v6/771cc165b905af3683c4d984/pair/ARS/USD/100";
-        HttpClient client = HttpClient.newHttpClient();
-        HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create(API_BASE_URL))
-                .build();
-
-        HttpResponse<String> response = client
-                .send(request, HttpResponse.BodyHandlers.ofString());
-
-        String json = response.body();
-
-        Gson gson = new Gson();
-        Coins coin = gson.fromJson(json, Coins.class);
-        System.out.println(coin);
-
+    public static void main(String[] args) {
         int option = 0;
         Scanner keyboard = new Scanner(System.in);
         String optionText = "Ingresa el valor que desear convertir:";
@@ -52,8 +31,13 @@ public class Readings {
                 case 1:
                     System.out.println(optionText);
                     valueToConvert = keyboard.nextDouble();
-                    convertedValue = valueToConvert * 10;
-                    System.out.println("El valor " + valueToConvert + " [USD] corresponde al valor final de =>>> " + convertedValue + " [ARS]");
+                    try{
+                        ApiService service = new ApiService("USD", "ARS", valueToConvert);
+                        Coins result = service.getCoin();
+                    System.out.println("El valor " + valueToConvert + " [USD] corresponde al valor final de =>>> " + result + " [ARS]");
+                    } catch (IOException | InterruptedException e) {
+                        e.printStackTrace();
+                    }
                     break;
                 case 2:
                     System.out.println(optionText);
