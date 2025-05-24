@@ -10,6 +10,6 @@ public class Coins {
 
     @Override
     public String toString() {
-        return "Coins result= " + result;
+        return result;
     }
 }
