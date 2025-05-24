@@ -83,14 +83,28 @@ public class Readings {
                 case 5:
                     System.out.println(optionText);
                     valueToConvert = keyboard.nextDouble();
-                    convertedValue = valueToConvert * 15;
-                    System.out.println("El valor " + valueToConvert + " [USD] corresponde al valor final de =>>> " + convertedValue + " [COP]");
+
+                    try{
+                        ApiService service = new ApiService("USD", "COP", valueToConvert);
+                        Coins result = service.getCoin();
+                        System.out.println("El valor " + valueToConvert + " [USD] corresponde al valor final de =>>> " + result + " [COP]");
+                    } catch (IOException | InterruptedException e) {
+                        System.err.println("Error al obtener información de la moneda: " + e.getMessage());
+                    }
+
                     break;
                 case 6:
                     System.out.println(optionText);
                     valueToConvert = keyboard.nextDouble();
-                    convertedValue = valueToConvert / 15;
-                    System.out.println("El valor " + valueToConvert + " [COP] corresponde al valor final de =>>> " + convertedValue + " [USD]");
+
+                    try{
+                        ApiService service = new ApiService("COP", "USD", valueToConvert);
+                        Coins result = service.getCoin();
+                        System.out.println("El valor " + valueToConvert + " [COP] corresponde al valor final de =>>> " + result + " [USD]");
+                    } catch (IOException | InterruptedException e) {
+                        System.err.println("Error al obtener información de la moneda: " + e.getMessage());
+                    }
+
                     break;
                 case 7:
                     System.out.println("Saliendo del programa.");
