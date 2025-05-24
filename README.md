@@ -35,7 +35,3 @@ La aplicación soporta las siguientes conversiones:
 ## 🌐 API Utilizada
 
 Este proyecto utiliza [ExchangeRate-API](https://www.exchangerate-api.com/) para obtener las tasas de cambio más recientes y precisas.
-
-## 📝 Licencia
-
-Este proyecto está bajo la Licencia MIT - mira el archivo [LICENSE](LICENSE) para más detalles.
