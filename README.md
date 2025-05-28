@@ -27,10 +27,10 @@ La aplicación soporta las siguientes conversiones:
 
 ## 🛠️ Tecnologías Utilizadas
 
-- **Java** - Lenguaje de programación principal
-- **ExchangeRate-API** - API para obtener tasas de cambio en tiempo real
-- **JSON** - Para el manejo de datos de la API
-- **Maven** - Gestión de dependencias
+- **Java**
+- **ExchangeRate-API**
+- **JSON**
+- **Maven**
 
 ## 🌐 API Utilizada
 
