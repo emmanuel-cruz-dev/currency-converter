@@ -1,6 +1,6 @@
 # 💱 Conversor de Monedas
 
-Un conversor de monedas desarrollado en Java que permite convertir entre diferentes divisas latinoamericanas y el dólar estadounidense en tiempo real. El proyecto forma parte del challenge propuesto por AluraLatam.
+Un conversor de monedas desarrollado en Java que permite convertir entre diferentes divisas latinoamericanas y el dólar estadounidense en tiempo real.
 
 ## 📋 Descripción
 
